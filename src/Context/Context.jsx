@@ -5,7 +5,7 @@ export const Context = createContext();
 export const ContextProvider = ({ children }) => {
   const [dato, setData] = useState([]);
   const url = "/db.json";
-  const consultarPizzas = async (url) => {
+  const consultarautos = async (url) => {
     try {
       fetch(url);
       const res = await axios.get(url);
@@ -16,7 +16,7 @@ export const ContextProvider = ({ children }) => {
     }
   };
   useEffect(() => {
-    consultarPizzas(url);
+    consultarautos(url);
   }, []);
 
   console.log(dato);

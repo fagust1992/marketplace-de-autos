@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ContextProvider } from "./Context/Context";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Paginas/Publicas/Home";
+import Registrar from "./Paginas/Publicas/Registrarse";
+import { SobreNostros } from "./Paginas/Publicas/sobreNostros";
+import Productos from "./Paginas/Publicas/Productos";
+import Perfil from "./Paginas/Privadas/Perfil";
+import Compras from "./Paginas/Privadas/Compras";
+import Productosquetegustan from "./Paginas/Privadas/likes-productos";
+import Seguimientos from "./Paginas/Privadas/Seguimientos";
+import Publicaciones from "./Paginas/Privadas/Publicaciones";
+import Navar from "./layouts/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <ContextProvider>
+          <Navar />
+          <Routes>
+            --rutas-- -- Publicas--
+            <Route path="/" element={<Home />} />
+            <Route path="/nosotros" element={<SobreNostros />} />
+            <Route path="/registrarse" element={<Registrar />} />
+            <Route path="/productos" element={<Productos />} />
+            -- rutas Privadas--
+            <Route path="/perfil" element={<Perfil />} />
+            <Route path="/compras" element={<Compras />} />
+            <Route path="/likes" element={<Productosquetegustan />} />
+            <Route path="/seguimientos" element={<Seguimientos />} />
+            <Route path="/publicar" element={<Publicaciones />} />
+          </Routes>
+        </ContextProvider>
+      </BrowserRouter>
     </div>
   );
 }

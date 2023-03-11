@@ -11,27 +11,31 @@ import Productosquetegustan from "./Paginas/Privadas/likes-productos";
 import Seguimientos from "./Paginas/Privadas/Seguimientos";
 import Publicaciones from "./Paginas/Privadas/Publicaciones";
 import Navar from "./layouts/Navbar";
+import Login from "./Paginas/Publicas/Inicio de seccion";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <ContextProvider>
-          <Navar />
-          <Routes>
-            --rutas-- -- Publicas--
-            <Route path="/" element={<Home />} />
-            <Route path="/nosotros" element={<SobreNostros />} />
-            <Route path="/registrarse" element={<Registrar />} />
-            <Route path="/productos" element={<Productos />} />
-            -- rutas Privadas--
-            <Route path="/perfil" element={<Perfil />} />
-            <Route path="/compras" element={<Compras />} />
-            <Route path="/likes" element={<Productosquetegustan />} />
-            <Route path="/seguimientos" element={<Seguimientos />} />
-            <Route path="/publicar" element={<Publicaciones />} />
-          </Routes>
-        </ContextProvider>
+        <div>
+          <ContextProvider>
+            <Navar />
+            <Routes>
+              --rutas-- -- Publicas--
+              <Route path="/" element={<Home />} />
+              <Route path="/nosotros" element={<SobreNostros />} />
+              <Route path="/registrarse" element={<Registrar />} />
+              <Route path="/productos" element={<Productos />} />
+              -- rutas Privadas--
+              <Route path="/perfil" element={<Perfil />} />
+              <Route path="/compras" element={<Compras />} />
+              <Route path="/likes" element={<Productosquetegustan />} />
+              <Route path="/seguimientos" element={<Seguimientos />} />
+              <Route path="/publicar" element={<Publicaciones />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </ContextProvider>
+        </div>
       </BrowserRouter>
     </div>
   );

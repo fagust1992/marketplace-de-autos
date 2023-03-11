@@ -4,7 +4,7 @@ const NavBar = () => {
     <nav className="navbar navbar-light  menu">
       <div className="container-fluid">
         <div className="nav-item">
-          <Link to="/"> MENU</Link>
+          <Link to="/perfil"> MENU</Link>
         </div>
       </div>
     </nav>

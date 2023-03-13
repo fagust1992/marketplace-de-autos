@@ -23,13 +23,25 @@ export default function Publicaciones() {
       setError(true);
       return;
     }
-  };
+    setError(false);
+
+    setNombre('');
+    setImagen('');
+setMarca('');
+setCombustible('');
+setKm('');
+setDescripcion('');
+};
+  
 
 
 
   return (
     <>
       <form className="formulario" onSubmit={validarDatos}>
+      {error ? <h3 
+      
+      className="error">Todos los campos son obligatorios</h3> : null}
       <div className="form-group">
           <label>Imagen</label>
           <input

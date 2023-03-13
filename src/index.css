@@ -47,3 +47,18 @@ footer {
   padding: 20px 0;
   background: #1e1e1e;
 }
+
+.formulario{
+  margin: 70px;
+  }
+
+.error {
+    padding: 10px;
+    max-width: 30%;
+    color: white;
+    background-color: red;
+    text-align: center;
+    font-weight: bold;
+    }
+    
+  

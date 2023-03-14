@@ -4,6 +4,7 @@ export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [dato, setData] = useState([]);
+
   const url = "/db.json";
   const consultarautos = async (url) => {
     try {
@@ -20,15 +21,13 @@ export const ContextProvider = ({ children }) => {
   }, []);
 
   console.log(dato);
-  const registrarcliente = (parametro) => {
-    /*ejmplos de estrutura de funcion que hara registar*/
-  };
+
   const inicarsecccion = (parametr) => {
-    /*ejmplos de estrutura de funcion que hara registar*/
+    setData(parametr);
   };
 
   return (
-    <Context.Provider value={{ dato, registrarcliente, inicarsecccion }}>
+    <Context.Provider value={{ dato, inicarsecccion }}>
       {children}
     </Context.Provider>
   );

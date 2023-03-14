@@ -1,20 +1,32 @@
 import { Context } from "../../Context/Context";
 import { useContext } from "react";
 import React, { useState } from "react";
+import Formulario_cliente from "../../Components/formulario";
 
 export default function Registrar() {
-  const { dato, inicarsecccion } = useContext(Context);
-  const x = [];
-  inicarsecccion(x);
-  const productos = dato.usuario;
-  const [inputnombre, setInputNombre] = useState("");
-  const [inputcorreo, setInputcorreo] = useState("");
-  const [inputcomentario, setInputcomentario] = useState("");
-  const [inputcotizacion, setInputcotizacion] = useState("");
+  const { usuario, setUsuario } = useContext(Context);
+
+  const agragar_datoscliente = (datos_clientes) => {
+    if (!datos_clientes) {
+      return;
+    }
+
+    console.log(datos_clientes);
+    var a = {
+      nombre: datos_clientes.nombre,
+      age: datos_clientes.age,
+      username: datos_clientes.username,
+      password: datos_clientes.password,
+      id: datos_clientes.id,
+    };
+
+    setUsuario([...usuario, a]);
+  };
 
   return (
     <>
-      <h1>soy la pagina registrarse</h1>
+      {console.log(usuario)}
+      <Formulario_cliente agregar_nombre={agragar_datoscliente} />
     </>
   );
 }

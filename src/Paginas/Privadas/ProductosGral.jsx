@@ -44,10 +44,10 @@ const [listaProductos, setListaProductos] = useState(listasProductos)
 const modificarLike = (producto) => {
   const nuevoLike = [...listaProductos] 
   
-  //Copiamos las tareas anteriores
+  console.log(nuevoLike)// Copiamos las tareas anteriores
   const index = nuevoLike.findIndex(el => el.id === producto.id)
 
-
+  alert(index)
   // Buscamos la tarea a modificar en la lista
   nuevoLike[index].favorita = false
   setListaProductos(nuevoLike)
@@ -59,18 +59,12 @@ const modificarLike = (producto) => {
     setListaProductos(listaFiltrada)
     }
 
-    const listaLikes=listaProductos.filter(x=>x.favorita===true)
-
-  
-
-
 
   return (
     <>
-      
-      <h1>Lista de Productos Favoritos</h1>
+      <h1>Lista de todos los productos:</h1>
       <ul>
-        {listaLikes.map((producto)=>
+        {listaProductos.map((producto)=>
           <li 
           key={producto.id}
           
@@ -83,12 +77,11 @@ const modificarLike = (producto) => {
         
         onClick={()=>modificarLike(producto)}
         >UNLIKE</button>}
-        
+        <button
+        onClick={()=>eliminarLike(producto)}
+        >Eliminar</button>
         </li>)}
       </ul>
     </>
-
-  
-
   );
 }

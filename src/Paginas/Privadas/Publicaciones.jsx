@@ -31,6 +31,7 @@ setMarca('');
 setCombustible('');
 setKm('');
 setDescripcion('');
+alert('La publicación se ha cargado corretamente')
 };
   
 

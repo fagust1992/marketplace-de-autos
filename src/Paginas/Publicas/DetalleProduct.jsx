@@ -7,7 +7,7 @@ export function Detalleproducto() {
   const { dato } = useContext(Context);
   const productos = dato.products;
   const x = productos?.findIndex((x) => x.id === parseInt(id));
-
+  console.log(x);
   return (
     <>
       <h1>soy detalle product</h1>

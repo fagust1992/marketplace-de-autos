@@ -5,6 +5,7 @@ import Formulario_cliente from "../../Components/formulario";
 
 export default function Registrar() {
   const { usuario, setUsuario } = useContext(Context);
+  console.log(usuario);
 
   const agragar_datoscliente = (datos_clientes) => {
     if (!datos_clientes) {
@@ -12,7 +13,7 @@ export default function Registrar() {
     }
 
     console.log(datos_clientes);
-    var a = {
+    const a = {
       nombre: datos_clientes.nombre,
       age: datos_clientes.age,
       username: datos_clientes.username,

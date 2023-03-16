@@ -1,71 +1,116 @@
 import { Context } from "../../Context/Context";
-import { useContext, useState } from "react";
+import { useContext } from "react";
+import React from "react";
+import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AESEncrypt } from "../../utils/encrypt";
+import { useForm } from "react-hook-form";
 export default function Login() {
+  const [userName, setUserName] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const { inicioseccion, setInicioseccion } = useContext(Context);
   const navigate = useNavigate();
-  const { setUsuario } = useContext(Context);
-  const [usuario, setUsuarioLocal] = useState({});
-  console.log(usuario);
-
-  const handleSetUsuario = ({ target: { value, name } }) => {
-    const field = {};
-    field[name] = value;
-
-    setUsuarioLocal({ ...usuario, ...field });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (evento) => {
+    console.log(evento);
+    setTimeout(() => {
+      if (evento != "") {
+        document.getElementById("formulario").reset();
+      }
+    }, 3000);
   };
-  const iniciarSesion = async () => {
-    const { email, password } = usuario;
+
+  const login = async () => {
+    const objeto = {
+      email: userName,
+      password: password,
+    };
     try {
-      if (!email || !password) return alert("Email y password obligatorias");
-      const {
-        data: { token },
-      } = await axios.post("users.json", usuario);
-
-      alert("Usuario identificado con éxito 😀");
-      localStorage.setItem("token", AESEncrypt(token));
-
-      setUsuario(email);
+      const accessUser = await axios.post(
+        "http://localhost:3000/login",
+        objeto
+      );
+      swal({
+        title: "Success",
+        text: " usuario exitoso",
+        icon: "success",
+        button: false,
+      });
+      setTimeout(() => {
+        swal.close();
+      }, 2000);
+      localStorage.setItem("tk", AESEncrypt(accessUser.data.token));
+      setInicioseccion(true);
       navigate("/perfil");
-    } catch ({ response: { data: message } }) {
-      alert(message + " 🙁");
-      console.log(message);
+    } catch (error) {
+      swal({
+        title: "Error",
+        text: "Usuario no registrado",
+        icon: "error",
+        button: false,
+      });
+      setTimeout(() => {
+        swal.close();
+      }, 2000);
     }
   };
+
   return (
     <>
-      <h1>soy pagina de login</h1>
-      <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
-        <h1>Iniciar Sesión</h1>
-        <hr />
-        <div className="form-group mt-1 ">
-          <label>Email address</label>
+      <h1>Formulario Login</h1>
+      <form action="" onSubmit={handleSubmit(onSubmit)} id="formulario">
+        <div className="inputs-form">
           <input
-            value={usuario.email}
-            onChange={handleSetUsuario}
             type="email"
+            placeholder="Type here your user name"
+            className="input input-bordered input-xs w-full max-w-xs"
             name="email"
-            className="form-control"
-            placeholder="Enter email"
+            onChange={(e) => setUserName(e.target.value)}
+            {...register("email", {
+              required: {
+                value: true,
+                message: "Necesitas este campo",
+              },
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                message: "El formato no es correcto",
+              },
+            })}
           />
-        </div>
-        <div className="form-group mt-1 ">
-          <label>Password</label>
+          {errors.email && <span className="c">{errors.email.message}</span>}
           <input
-            value={usuario.password}
-            onChange={handleSetUsuario}
             type="password"
+            placeholder="Type here your password"
+            className="input input-bordered input-xs w-full max-w-xs"
+            onChange={(e) => setPassword(e.target.value)}
             name="password"
-            className="form-control"
-            placeholder="Password"
+            {...register("password", {
+              required: {
+                value: true,
+                message: "La contraseña es requerida",
+              },
+              minLength: {
+                value: 10,
+                message: "La contraseña debe tener al menos 6 caracteres",
+              },
+            })}
           />
+          {errors.password && <span>{errors.password.message}</span>}
+          <button
+            type="submit"
+            value="submit"
+            className="boton"
+            onClick={login}
+          >
+            Button
+          </button>
         </div>
-
-        <button onClick={iniciarSesion} className="btn btn-light mt-3">
-          Iniciar Sesión
-        </button>
-      </div>
+      </form>
     </>
   );
 }

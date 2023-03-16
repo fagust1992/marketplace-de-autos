@@ -1,11 +1,12 @@
 import { createContext, useEffect, useState } from "react";
-import Formulario_cliente from "../Paginas/Publicas/Registrarse";
+
 import axios from "axios";
 export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [dato, setData] = useState([]);
   const [usuario, setUsuario] = useState([]);
+  const [inicioseccion, setInicioseccion] = useState(false);
 
   const url = "/db.json";
   const consultarautos = async (url) => {
@@ -27,7 +28,9 @@ export const ContextProvider = ({ children }) => {
   console.log(usuario);
 
   return (
-    <Context.Provider value={{ dato, usuario, setUsuario }}>
+    <Context.Provider
+      value={{ dato, usuario, setUsuario, inicioseccion, setInicioseccion }}
+    >
       {children}
     </Context.Provider>
   );

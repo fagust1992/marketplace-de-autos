@@ -26,13 +26,17 @@ const Formulario_cliente = (props) => {
   return (
     <>
       <h3> Registrar cliente</h3>
+
       <form onSubmit={manejarFormulario} className="row  ">
-        <div class="container">
+        <div>
+          <img src="" alt="" />
+        </div>
+        <div class="container ">
           <input
             type="text"
             value={inputnombre}
             onChange={(e) => setInputNombre(e.target.value)}
-            className="col-8 input"
+            className=" input"
             placeholder="Nombre"
           />
 
@@ -58,7 +62,9 @@ const Formulario_cliente = (props) => {
             placeholder="cotizacion"
           />
 
-          <button className="col-8 btn-primary">Agregar Cliente</button>
+          <button className="col-8 btn-primary add_client_register">
+            Agregar Cliente
+          </button>
         </div>
       </form>
     </>

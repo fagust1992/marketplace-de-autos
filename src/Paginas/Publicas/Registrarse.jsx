@@ -2,10 +2,10 @@ import { Context } from "../../Context/Context";
 import { useContext } from "react";
 import React, { useState } from "react";
 import Formulario_cliente from "../../Components/formulario";
+import Footer from "../../layouts/Footer";
 
 export default function Registrar() {
   const { usuario, setUsuario } = useContext(Context);
-  console.log(usuario);
 
   const agragar_datoscliente = (datos_clientes) => {
     if (!datos_clientes) {
@@ -13,7 +13,7 @@ export default function Registrar() {
     }
 
     console.log(datos_clientes);
-    const a = {
+    var a = {
       nombre: datos_clientes.nombre,
       age: datos_clientes.age,
       username: datos_clientes.username,
@@ -28,6 +28,7 @@ export default function Registrar() {
     <>
       {console.log(usuario)}
       <Formulario_cliente agregar_nombre={agragar_datoscliente} />
+      <Footer />
     </>
   );
 }

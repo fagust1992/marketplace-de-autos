@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 export default function Login() {
   const [userName, setUserName] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const { inicioseccion, setInicioseccion } = useContext(Context);
+  const { setInicioseccion } = useContext(Context);
   const navigate = useNavigate();
   const {
     register,
@@ -22,7 +22,7 @@ export default function Login() {
       if (evento != "") {
         document.getElementById("formulario").reset();
       }
-    }, 3000);
+    }, 2000);
   };
 
   const login = async () => {
@@ -63,52 +63,71 @@ export default function Login() {
   return (
     <>
       <h1>Formulario Login</h1>
-      <form action="" onSubmit={handleSubmit(onSubmit)} id="formulario">
-        <div className="inputs-form">
-          <input
-            type="email"
-            placeholder="Type here your user name"
-            className="input input-bordered input-xs w-full max-w-xs"
-            name="email"
-            onChange={(e) => setUserName(e.target.value)}
-            {...register("email", {
-              required: {
-                value: true,
-                message: "Necesitas este campo",
-              },
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                message: "El formato no es correcto",
-              },
-            })}
-          />
-          {errors.email && <span className="c">{errors.email.message}</span>}
-          <input
-            type="password"
-            placeholder="Type here your password"
-            className="input input-bordered input-xs w-full max-w-xs"
-            onChange={(e) => setPassword(e.target.value)}
-            name="password"
-            {...register("password", {
-              required: {
-                value: true,
-                message: "La contraseña es requerida",
-              },
-              minLength: {
-                value: 10,
-                message: "La contraseña debe tener al menos 6 caracteres",
-              },
-            })}
-          />
-          {errors.password && <span>{errors.password.message}</span>}
-          <button
-            type="submit"
-            value="submit"
-            className="boton"
-            onClick={login}
-          >
-            Button
-          </button>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="formulario">
+        <div>
+          <span clasclassName="hijos-formulario">
+            <div class="mb-3 ">
+              <input
+                type="email"
+                placeholder="ingrese tu correo :)"
+                className="input input-bordered input-xs w-full max-w-xs"
+                name="email"
+                onChange={(e) => setUserName(e.target.value)}
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "Necesitas este campo 😟",
+                  },
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "El formato no es correcto 😟 ",
+                  },
+                })}
+              />
+
+              <div id="emailHelp" className="form-text">
+                {errors.email && (
+                  <span className="c">{errors.email.message}</span>
+                )}
+              </div>
+            </div>
+            <div className="mb-3">
+              <input
+                type="password"
+                placeholder="Type here your password"
+                className="input input-bordered input-xs w-full max-w-xs"
+                onChange={(e) => setPassword(e.target.value)}
+                name="password"
+                {...register("password", {
+                  required: {
+                    value: true,
+                    message: "La contraseña es requerida 😟",
+                  },
+                  minLength: {
+                    value: 6,
+
+                    message:
+                      "La contraseña debe tener al menos 6 caracteres 😟",
+                  },
+                })}
+              />
+            </div>
+            <div className="mb-3 form-check">
+              <label className="form-check-label" for="exampleCheck1">
+                {errors.password && <span>{errors.password.message}</span>}
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              value="submit"
+              className="btn btn-primary"
+              onClick={login}
+            >
+              Iniciar seccion
+            </button>
+          </span>
         </div>
       </form>
     </>

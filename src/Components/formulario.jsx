@@ -16,6 +16,7 @@ const Formulario_cliente = (props) => {
       password: inputpassword,
       id: 2,
     };
+
     props.agregar_nombre(json);
 
     setInputNombre("");
@@ -25,13 +26,13 @@ const Formulario_cliente = (props) => {
   };
   return (
     <>
-      <h3> Registrar cliente</h3>
+      <p> Registrar cliente</p>
 
-      <form onSubmit={manejarFormulario} className="row  ">
+      <form onSubmit={manejarFormulario} className="row form-register ">
         <div>
           <img src="" alt="" />
         </div>
-        <div class="container ">
+        <div class="container c-form ">
           <input
             type="text"
             value={inputnombre}

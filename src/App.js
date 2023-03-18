@@ -33,8 +33,8 @@ function App() {
               <Route path="/compras" element={<Compras />} />
               <Route path="/likes" element={<Productosquetegustan />} />
               <Route path="/seguimientos" element={<Seguimientos />} />
-              <Route path="/publicar" element={<Publicaciones />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/publicar" element={<Publicaciones />} />
             </Routes>
           </ContextProvider>
         </div>

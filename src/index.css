@@ -196,3 +196,9 @@ footer {
 .padre {
   height: auto;
 }
+.productos-registrar {
+  background: #3da3a0;
+}
+.form-register {
+  background: hsl(49, 100%, 64%);
+}

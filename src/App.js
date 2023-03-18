@@ -13,6 +13,7 @@ import Publicaciones from "./Paginas/Privadas/Publicaciones";
 import Navar from "./layouts/Navbar";
 import Login from "./Paginas/Publicas/Inicio de seccion";
 import { Detalleproducto } from "./Paginas/Publicas/DetalleProduct";
+import { PerfilDemo } from "./Paginas/Privadas/PerfilDemo";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path="/seguimientos" element={<Seguimientos />} />
               <Route path="/login" element={<Login />} />
               <Route path="/publicar" element={<Publicaciones />} />
+              <Route path="/perfil_demo" element={<PerfilDemo />} />
             </Routes>
           </ContextProvider>
         </div>

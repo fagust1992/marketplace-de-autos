@@ -44,7 +44,7 @@
     {
       "id": 2,
       "nombre": "Producto Nº2",
-      "productUrl": "https://www.hyundai.cl/content/uploads/hyu-cl-header-mobile-new-atos.jpg",
+      "productUrl": "https://autotest.com.ar/wp-content/uploads/2020/12/CHEVROLET-SPARK.jpg",
       "marca": "marca",
       "precio": 7000000,
       "tipo_de_combustible": "tipo de combustible",
@@ -54,7 +54,7 @@
     {
       "id": 3,
       "nombre": "Producto Nº2",
-      "productUrl": "https://www.hyundai.cl/content/uploads/hyu-cl-header-mobile-new-atos.jpg",
+      "productUrl": "https://d21su7g2oc495k.cloudfront.net/images/vehiculos_sinmarca/h3y9ov-IO1t4bV8GPl7ma6MJN391AT_foto_.jpg",
       "marca": "marca",
       "precio": 1200000,
       "tipo_de_combustible": "tipo de combustible",
@@ -64,7 +64,7 @@
     {
       "id": 4,
       "nombre": "Producto Nº2",
-      "productUrl": "https://www.hyundai.cl/content/uploads/hyu-cl-header-mobile-new-atos.jpg",
+      "productUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/2021_Toyota_Corolla_SE_Hatchback.jpg/640px-2021_Toyota_Corolla_SE_Hatchback.jpg",
       "marca": "marca",
       "precio": 9000000,
       "tipo_de_combustible": "tipo de combustible",
@@ -74,7 +74,7 @@
     {
       "id": 5,
       "nombre": "Producto Nº2",
-      "productUrl": "https://www.hyundai.cl/content/uploads/hyu-cl-header-mobile-new-atos.jpg",
+      "productUrl": "https://static.retail.autofact.cl/blog/c_url_original.643k7kk5jdydz.jpg",
       "marca": "marca",
       "precio": 9000000,
       "tipo_de_combustible": "tipo de combustible",
@@ -84,7 +84,7 @@
     {
       "id": 6,
       "nombre": "Producto Nº2",
-      "productUrl": "https://www.hyundai.cl/content/uploads/hyu-cl-header-mobile-new-atos.jpg",
+      "productUrl": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/m/RT_V_6b8d809e846542f9a8b4ecf1114fdd33.jpg",
       "marca": "marca",
       "precio": 9000000,
       "tipo_de_combustible": "tipo de combustible",
@@ -104,7 +104,7 @@
     {
       "id": 8,
       "nombre": "Producto Nº2",
-      "productUrl": "https://www.hyundai.cl/content/uploads/hyu-cl-header-mobile-new-atos.jpg",
+      "productUrl": "https://www.mitsubishi-motors.com.pe/blog/wp-content/uploads/2020/06/auto-hatchbak-ventajas-mitsubishi.jpg",
       "marca": "marca",
       "precio": 9000000,
       "tipo_de_combustible": "tipo de combustible",

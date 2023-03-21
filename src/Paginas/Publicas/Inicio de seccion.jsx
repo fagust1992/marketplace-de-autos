@@ -46,7 +46,7 @@ export default function Login() {
       }, 2000);
       localStorage.setItem("tk", AESEncrypt(accessUser.data.token));
       setInicioseccion(true);
-      navigate("/perfi");
+      navigate("/perfil");
     } catch (error) {
       swal({
         title: "Error",

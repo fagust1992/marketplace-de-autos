@@ -1,10 +1,7 @@
-import { Context } from "../../Context/Context";
-import { useContext } from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 export function SobreNostros() {
   const [dato, setData] = useState([]);
-  const [usuario, setUsuario] = useState([]);
 
   const url = "users.json";
   const consultarautos = async (url) => {

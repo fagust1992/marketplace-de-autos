@@ -13,7 +13,7 @@ import Publicaciones from "./Paginas/Privadas/Publicaciones";
 import Navar from "./layouts/Navbar";
 import Login from "./Paginas/Publicas/Inicio_ d _seccion";
 import { Detalleproducto } from "./Paginas/Publicas/DetalleProduct";
-import { PerfilDemo } from "./Paginas/Privadas/PerfilDemo";
+//import { PerfilDemo } from "./Paginas/Privadas/PerfilDemo";
 
 function App() {
   return (

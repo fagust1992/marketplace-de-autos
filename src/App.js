@@ -36,7 +36,6 @@ function App() {
               <Route path="/seguimientos" element={<Seguimientos />} />
               <Route path="/login" element={<Login />} />
               <Route path="/publicar" element={<Publicaciones />} />
-              <Route path="/perfil_demo" element={<PerfilDemo />} />
             </Routes>
           </ContextProvider>
         </div>

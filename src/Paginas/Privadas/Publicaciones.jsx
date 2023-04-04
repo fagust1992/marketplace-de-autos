@@ -16,12 +16,12 @@ export default function Publicaciones() {
       url: datos_prodcutos,
       marca: datos_prodcutos.marca,
       password: datos_prodcutos.password,
-      id: datos_prodcutos.id,
+
       precio: datos_prodcutos.precio,
       propietario: datos_prodcutos.propietario,
       tipo_de_combustible: datos_prodcutos.combustible,
     };
-    if (Publicacion != "") {
+    if (Publicacion !== "") {
       setProductos([...productos, Publicacion]);
     }
   };

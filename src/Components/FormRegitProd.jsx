@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Formulario_publicar_producto_ = (props) => {
+const Formulario_publicar_producto = (props) => {
   const [inputnombre, setInputNombre] = useState("");
   const [productUrl, setInputUrl] = useState("");
   const [inputkilometros, setInputkilometros] = useState("");
@@ -102,4 +102,4 @@ const Formulario_publicar_producto_ = (props) => {
   );
 };
 
-export default Formulario_publicar_producto_;
+export default Formulario_publicar_producto;

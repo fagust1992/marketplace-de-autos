@@ -19,7 +19,7 @@ export default function Login() {
   const onSubmit = (evento) => {
     console.log(evento);
     setTimeout(() => {
-      if (evento != "") {
+      if (evento !== "") {
         document.getElementById("formulario").reset();
       }
     }, 2000);

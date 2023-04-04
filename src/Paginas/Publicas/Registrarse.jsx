@@ -1,6 +1,6 @@
 import { Context } from "../../Context/Context";
 import { useContext } from "react";
-import React, { useState } from "react";
+
 import Formulario_cliente from "../../Components/formulario";
 import Footer from "../../layouts/Footer";
 

@@ -1,8 +1,9 @@
+/*
 import { Context } from "../../Context/Context";
 import { useContext } from "react";
 import { useEffect, useState } from "react";
 import Footer from "../../layouts/Footer";
-
+*/
 export function PerfilDemo() {
   return (
     <>
